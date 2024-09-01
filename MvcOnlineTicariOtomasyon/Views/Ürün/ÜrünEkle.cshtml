@@ -1,0 +1,47 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Urun
+
+@{
+    ViewBag.Title = "ÜrünEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ürün Sayfası</h1>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Marka")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Stok")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Alış Fiyat")
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Satış Fiyat")
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x=>x.kategoriİd,(List<SelectListItem>) ViewBag.v1,new {@class="form-control" }  )
+    <br />
+
+    @Html.Label("Görsel")
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+</form>

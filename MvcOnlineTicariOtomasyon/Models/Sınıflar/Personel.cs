@@ -24,7 +24,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(250)]
         public string personelGorsel { get; set; }
 
-        public SatisHareket SatisHareket { get; set; }
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
         public Departman Departman { get; set; }
     }
 }

@@ -1,0 +1,48 @@
+﻿/* Genel Tablo Stilleri */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #ff7979; /* Başlık hücreleri için arka plan rengi */
+        color: white; /* Başlık hücreleri için yazı rengi */
+    }
+
+    .table td {
+        background-color: #eb4d4b; /* Veri hücreleri için arka plan rengi */
+        color: white; /* Veri hücreleri için yazı rengi */
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #dbe3f0; /* Çift sıra için arka plan rengi */
+    }
+
+    .table tr:nth-child(odd) {
+        background-color: #e6e6e6; /* Tek sıra için arka plan rengi */
+    }
+
+/* Buton Stilleri */
+.btn-primary {
+    background-color: #007bff; /* Buton arka plan rengi */
+    color: white; /* Buton yazı rengi */
+    border: none; /* Buton kenarlık yok */
+    padding: 10px 20px; /* Butonun iç boşlukları */
+    text-align: center; /* Yazının ortalanması */
+    text-decoration: none; /* Yazı altında çizgi olmaması */
+    display: inline-block; /* Butonun hizalanması */
+    font-size: 16px; /* Yazı büyüklüğü */
+    margin: 5px 2px; /* Buton etrafındaki boşluk */
+    cursor: pointer; /* Fare işareti */
+    border-radius: 4px; /* Kenarları yuvarlama */
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Hover (üzerine gelindiğinde) rengi */
+    }

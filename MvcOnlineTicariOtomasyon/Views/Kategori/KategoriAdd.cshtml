@@ -1,0 +1,20 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Kategori
+
+@{
+    ViewBag.Title = "KategoriAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kategori</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x=>x.İD, new { @class = "form-control" })
+    @Html.TextBoxFor(x=>x.KategoriAd,new {@class="form-control"})
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

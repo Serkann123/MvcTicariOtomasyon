@@ -1,0 +1,28 @@
+﻿<style >
+/* Genel tablo stili */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #ff7675;
+    color: white;
+    font-weight: 400;
+}
+/* Satırlara renk uygulama */
+.table tr:nth-child(odd) {
+    background-color: #ffdead; /* Alternatif satır 1 */
+}
+
+.table tr:nth-child(even) {
+    background-color: #ced6e0; /* Alternatif satır 2 */
+}
+
+</style >

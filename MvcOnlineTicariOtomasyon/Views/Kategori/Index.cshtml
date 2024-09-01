@@ -1,0 +1,56 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+<head>
+
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            font-weight: bold;
+            font-style: italic;
+            color: cornflowerblue;
+            letter-spacing: 3px;
+            text-decoration: underline;
+        }
+
+        .table-container {
+            margin-top: 0px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="~/Web/Csslerim/tablo.css" />
+</head>
+<body>
+    <h1>Kategoriler</h1>
+    <br />
+    <div class="table-container">
+        <table class="table table-bordered">
+            <tr>
+                <th>İD</th>
+                <th>Kategori Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.İD</td>
+                    <td>@item.KategoriAd</td>
+                    <td><a href="/Kategori/KategoriDelete/@item.İD/" class="btn btn-secondary">Sil</a></td>
+                    <td><a href="/Kategori/kategoriGetir/@item.İD/" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <a href="/Kategori/KategoriAdd/" class="btn btn-warning">Yeni Kategori</a>
+</body>
+</html>
