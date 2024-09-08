@@ -66,6 +66,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             return View(degerler);
         }
+
+        public ActionResult DepartmanSatıslar(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.Personelİd == id).ToList();
+            var persoenller = c.Personels.Where(x => x.Personelİd == id).Select(x => 
+            x.PersonelAd + " " + x.personelSoyad).FirstOrDefault();
+
+            ViewBag.vdepartman = persoenller;
+            return View(degerler);
+
+        }
         
     }
 }
