@@ -10,7 +10,6 @@
 <table class="table table-bordered">
 
     <tr>
-
         <th>Cari İd</th>
         <th>Ad</th>
         <th>Soyad</th>
@@ -30,9 +29,9 @@
         <td>@item.CariSoyad</td>
         <td>@item.CariSehir</td>
         <td>@item.CariMail</td>
-        <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-        <td><a href="#" class="btn btn-outline-warning">Güncelle</a></td>
-        <td><a href="#" class="btn btn-default" style="background-color:lightcoral">Satış Geçmişi</a></td>
+        <td><a href="/Cari/CariSil/@item.Cariİd" class="btn btn-outline-danger">Sil</a></td>
+        <td><a href="/Cari/CariGetir/@item.Cariİd" class="btn btn-outline-warning">Güncelle</a></td>
+        <td><a href="/Cari/MusteriSatis/@item.Cariİd" class="btn btn-default" style="background-color:lightcoral">Satış Geçmişi</a></td>
     </tr>
     }
 

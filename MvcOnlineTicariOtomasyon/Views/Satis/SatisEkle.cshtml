@@ -1,0 +1,39 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.SatisHareket    
+
+@{
+    ViewBag.Title = "SatisEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ürün Sayfası</h1>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.Label("Ürün")
+    @Html.DropDownListFor(x => x.Urunİd, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Cari")
+    @Html.DropDownListFor(x => x.Cariİd, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Persoenl")
+    @Html.DropDownListFor(x => x.Personelİd, (List<SelectListItem>)ViewBag.v3, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Adet")
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Toplam Tutar")
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Satış Yap</button>
+
+</form>

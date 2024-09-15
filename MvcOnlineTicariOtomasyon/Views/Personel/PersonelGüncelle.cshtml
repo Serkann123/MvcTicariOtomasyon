@@ -1,0 +1,33 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Personel
+
+@{
+    ViewBag.Title = "PersonelGüncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Cari Güncelleme Ekranı</h2>
+
+<br />
+
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Personelİd)
+
+    @Html.Label("Personel Adı")
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Personel Soyadı")
+    @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Personel Görsel")
+    @Html.TextBoxFor(x => x.personelGorsel, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Personel Departman")
+    @Html.DropDownListFor(x => x.departmanİd, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-default" style="background-color:cadetblue">Güncelle</button>
+}
