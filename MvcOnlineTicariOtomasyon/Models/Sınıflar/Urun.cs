@@ -23,8 +23,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public decimal SatisFiyat { get; set; }
         public bool Durum { get; set; }
 
-        [Column(TypeName = "Varchar")]
-        [StringLength(250)]
         public string UrunGorsel { get; set; }
 
         public int kategoriİd { get; set; }
