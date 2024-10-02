@@ -33,9 +33,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             //dördüncü satır
 
-            //var degerler = c.Uruns.Where(u => u.Urunİd == (c.SatisHarekets.GroupBy(x => x.Urunİd).OrderByDescending(z => z.Count())
-            //  .Select(y => y.Key).FirstOrDefault()));
-
             ViewBag.v13 = c.Uruns.Where(y => y.Urunİd == c.SatisHarekets.GroupBy(x => x.Urunİd).OrderByDescending(z => z.Count())
              .Select(x => x.Key).FirstOrDefault()).Select(x=>x.UrunAd).FirstOrDefault();
 
@@ -47,5 +44,60 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             return View();
         }
+
+        public ActionResult KolayTablolar()
+        {
+            var sorgu = from x in c.Carilers
+                        group x by x.CariSehir into g
+                        select new SınıfGrup
+                        {
+                            Sehir=g.Key,
+                            Sayi = g.Count()
+                        };
+
+            return View(sorgu.ToList());
+
+        }
+
+        public PartialViewResult partial1()
+        {
+            var values = from x in c.Personels
+                           group x by x.departmanİd
+                          into g
+                           select new SınıfGrup2
+                           {
+                               Departman = g.Key,
+                               Sayi = g.Count()
+                           };
+
+            return PartialView(values.ToList());
+        }
+
+        public PartialViewResult partial2()
+        {
+            var values = c.Carilers.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult partial3()
+        {
+            var values = c.Uruns.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult partial4()
+        {
+            var values = from x in c.Uruns
+                         group x by x.Marka
+                          into g
+                         select new SınıfGrup3
+                         {
+                             Marka = g.Key,
+                             Sayi = g.Count()
+                         };
+
+            return PartialView(values.ToList());
+        }
+
     }
 }
