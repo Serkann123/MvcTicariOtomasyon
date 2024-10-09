@@ -13,20 +13,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult Index()
         {
-            var degerler = c.Personels.ToList();
-            return View(degerler);
+            var values = c.Personels.ToList();
+            return View(values);
         }
 
         [HttpGet]
         public ActionResult PersonelEkle()
         {
-            List<SelectListItem> degerler = (from x in c.Departmen.ToList()
+            List<SelectListItem> values = (from x in c.Departmen.ToList()
                                              select new SelectListItem
                                              {
                                                  Text = x.DepartmanAd,
                                                  Value = x.Departmanİd.ToString()
                                              }).ToList();
-            ViewBag.v1 = degerler;
+            ViewBag.v1 = values;
 
             return View();
         }
@@ -51,20 +51,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                              }).ToList();
             ViewBag.v1 = personel;
 
-            var degerler = c.Personels.Find(id);
-            return View(degerler);
+            var values = c.Personels.Find(id);
+            return View(values);
         }
 
         [HttpPost]
         public ActionResult PersonelGüncelle(Personel p)
         {
-            var degerler = c.Personels.Find(p.Personelİd);
-            degerler.PersonelAd = p.PersonelAd;
-            degerler.personelSoyad = p.personelSoyad;
-            degerler.personelGorsel = p.personelGorsel;
-            degerler.departmanİd = p.departmanİd;
+            var values = c.Personels.Find(p.Personelİd);
+            values.PersonelAd = p.PersonelAd;
+            values.personelSoyad = p.personelSoyad;
+            values.personelGorsel = p.personelGorsel;
+            values.departmanİd = p.departmanİd;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult personelListesi()
+        {
+            var query = c.Personels.ToList();
+            return View(query);
         }
 
     }

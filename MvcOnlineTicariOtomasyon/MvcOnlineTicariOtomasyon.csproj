@@ -136,6 +136,7 @@
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
+    <Compile Include="Controllers\YapilacakController.cs" />
     <Compile Include="Controllers\ÜrünController.cs" />
     <Compile Include="Controllers\ÜrünDetayController.cs" />
     <Compile Include="Controllers\İstatistikController.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Models\Sınıflar\SınıfGrup2.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
+    <Compile Include="Models\Sınıflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2844,6 +2846,8 @@
     <Content Include="Views\İstatistik\partial2.cshtml" />
     <Content Include="Views\İstatistik\partial3.cshtml" />
     <Content Include="Views\İstatistik\partial4.cshtml" />
+    <Content Include="Views\Personel\personelListesi.cshtml" />
+    <Content Include="Views\Yapilacak\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

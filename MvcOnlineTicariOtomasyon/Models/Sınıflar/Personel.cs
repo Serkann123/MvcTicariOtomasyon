@@ -21,7 +21,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string personelSoyad { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(250)]
         public string personelGorsel { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }

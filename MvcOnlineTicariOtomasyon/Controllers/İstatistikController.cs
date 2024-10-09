@@ -62,7 +62,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public PartialViewResult partial1()
         {
             var values = from x in c.Personels
-                           group x by x.departmanİd
+                           group x by x.Departman.DepartmanAd
                           into g
                            select new SınıfGrup2
                            {

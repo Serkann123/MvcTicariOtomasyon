@@ -7,7 +7,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
 {
     public class SınıfGrup2
     {
-        public int Departman { get; set; }
+        public string Departman { get; set; }
         public int Sayi { get; set; }
     }
 }
