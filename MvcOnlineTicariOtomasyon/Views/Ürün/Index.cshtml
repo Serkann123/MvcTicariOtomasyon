@@ -11,7 +11,6 @@
     <table class="table table-bordered">
 
         <tr>
-            <th>İd</th>
             <th>Ürün</th>
             <th>Marka</th>
             <th>Stok</th>
@@ -19,7 +18,6 @@
             <th>Satıl Fiyatı</th>
             <th>Durum</th>
             <th>Kategori</th>
-            <th>Görsel</th>
             <th>Sil</th>
             <th>Güncelle</th>
         </tr>
@@ -27,7 +25,6 @@
         @foreach (var item in Model)
         {
         <tr>
-            <td>@item.Urunİd</td>
             <td>@item.UrunAd</td>
             <td>@item.Marka</td>
             <td>@item.Stok</td>
@@ -35,7 +32,6 @@
             <td>@item.SatisFiyat</td>
             <td>@item.Durum</td>
             <td>@item.Kategori.KategoriAd</td>
-            <td>@item.UrunGorsel</td>
             <td><a href="/Ürün/ÜrünSil/@item.Urunİd" class="btn btn-danger">Sil</a></td>
             <td><a href="/Ürün/ÜrünGüncelle/@item.Urunİd" class="btn btn-success">Güncelle</a></td>
         </tr>

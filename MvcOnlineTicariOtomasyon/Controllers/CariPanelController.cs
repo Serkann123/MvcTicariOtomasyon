@@ -16,7 +16,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CariMail"];
             var degerler = c.Carilers.FirstOrDefault(x=>x.CariMail==mail);
-            ViewBag.m = degerler;
+            ViewBag.ma = mail;
             return View(degerler);
         }
     }
