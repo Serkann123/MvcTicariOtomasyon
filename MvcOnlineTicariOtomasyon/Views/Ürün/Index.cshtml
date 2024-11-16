@@ -7,6 +7,15 @@
 }
 
     <link rel="stylesheet" href="~/Web/Csslerim/tablo.css"/>
+
+   <br />
+      @using (Html.BeginForm("Index", "Ürün", FormMethod.Get))
+      {
+          <p>
+              Ürün Adı: @Html.TextBox("p")
+              <input type="submit" value="Ara" />
+          </p>
+       }
     <br />
     <table class="table table-bordered">
 
@@ -28,14 +37,14 @@
             <td>@item.UrunAd</td>
             <td>@item.Marka</td>
             <td>@item.Stok</td>
-            <td>@item.AlisFiyat</td>
-            <td>@item.SatisFiyat</td>
+            <td>@item.AlisFiyat ₺</td>
+            <td>@item.SatisFiyat ₺</td>
             <td>@item.Durum</td>
             <td>@item.Kategori.KategoriAd</td>
             <td><a href="/Ürün/ÜrünSil/@item.Urunİd" class="btn btn-danger">Sil</a></td>
             <td><a href="/Ürün/ÜrünGüncelle/@item.Urunİd" class="btn btn-success">Güncelle</a></td>
         </tr>
-        }
+            }
 
     </table>
 

@@ -10,7 +10,7 @@
 
 <br />
 
-@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.HiddenFor(x => x.Personelİd)
 
@@ -23,7 +23,7 @@
     <br />
 
     @Html.Label("Personel Görsel")
-    @Html.TextBoxFor(x => x.personelGorsel, new { @class = "form-control" })
+    <input type="file" name="personelGorsel"/>
     <br />
 
     @Html.Label("Personel Departman")

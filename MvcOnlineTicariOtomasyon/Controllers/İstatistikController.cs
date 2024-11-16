@@ -40,7 +40,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var tarih = DateTime.Today;
             ViewBag.v15 = c.SatisHarekets.Count(x => x.Tarih == tarih);
 
-            ViewBag.v16 = c.SatisHarekets.Where(x => x.Tarih == tarih).Sum(x=>x.ToplamTutar);
+            ViewBag.v16 = c.SatisHarekets.Where(x => x.Tarih == tarih).Sum(x=> (decimal?)x.ToplamTutar);
 
             return View();
         }
