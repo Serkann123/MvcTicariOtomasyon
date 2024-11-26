@@ -8,13 +8,40 @@
 <h2>Yeni Kategori</h2>
 <br />
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <form class="form-group" method="post">
 
-    @Html.LabelFor(x=>x.İD, new { @class = "form-control" })
-    @Html.TextBoxFor(x=>x.KategoriAd,new {@class="form-control"})
+    @Html.LabelFor(x => x.İD, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
 
     <br />
-    <button class="btn btn-info">Kaydet</button>
-
+    <button class="btn btn-info" id="btn1">Kaydet</button>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+ 
+    $("#btn1").click(function (e) {
+        e.preventDefault(); 
+
+        Swal.fire({
+            title: "Başarıyla Ekleme İşlemi Yapıldı",
+            width: 600,
+            padding: "3em",
+            color: "#716add",
+            background: "#fff url(/images/trees.png)",
+            backdrop: `
+                rgba(0,0,123,0.4)
+                url("/images/nyan-cat.gif")
+                left top
+                no-repeat
+            `
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $("form").submit(); 
+            }
+        });
+    });
+</script>
