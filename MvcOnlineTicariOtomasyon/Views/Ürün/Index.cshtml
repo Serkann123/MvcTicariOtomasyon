@@ -6,35 +6,35 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-    <link rel="stylesheet" href="~/Web/Csslerim/tablo.css"/>
+<link rel="stylesheet" href="~/Web/Css/style.css" />
 
-   <br />
-      @using (Html.BeginForm("Index", "Ürün", FormMethod.Get))
-      {
-          <p>
-              Ürün Adı: @Html.TextBox("p")
-              <input type="submit" value="Ara" />
-          </p>
-       }
-    <br />
-    <table class="table table-bordered">
+<br />
+@using (Html.BeginForm("Index", "Ürün", FormMethod.Get))
+{
+    <p>
+        Ürün Adı: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<br />
+<table class="table table-bordered">
 
-        <tr>
-            <th>Ürün</th>
-            <th>Marka</th>
-            <th>Stok</th>
-            <th>Alış Fiyatı</th>
-            <th>Satıl Fiyatı</th>
-            <th>Durum</th>
-            <th>Kategori</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-            <th>Satış Yap</th>
-        </tr>
-            
-        @foreach (var item in Model)
-        {
-        <tr>
+    <tr class="headerTable">
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satıl Fiyatı</th>
+        <th>Durum</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satış Yap</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="alterTable">
             <td>@item.UrunAd</td>
             <td>@item.Marka</td>
             <td>@item.Stok</td>
@@ -46,8 +46,8 @@
             <td><a href="/Ürün/ÜrünGüncelle/@item.Urunİd" class="btn btn-success">Güncelle</a></td>
             <td><a href="/Ürün/SatisYap/@item.Urunİd" class="btn btn-primary">Satış Yap</a></td>
         </tr>
-            }
+    }
 
-    </table>
+</table>
 
 <a href="/Ürün/ÜrünEkle/" class="btn btn-secondary">Yeni Ürün Ekle</a>

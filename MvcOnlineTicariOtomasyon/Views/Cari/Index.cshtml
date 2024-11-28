@@ -6,10 +6,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<link rel="stylesheet" href="~/Web/Css/style.css" />
+
 <br />
 <table class="table table-bordered">
 
-    <tr>
+    <tr class="headerTable">
         <th>Cari İd</th>
         <th>Ad</th>
         <th>Soyad</th>
@@ -23,7 +25,7 @@
 
     @foreach(var item in Model)
     {
-    <tr>
+    <tr class="alterTable">
         <td>@item.Cariİd</td>
         <td>@item.CariAdı</td>
         <td>@item.CariSoyad</td>

@@ -2,18 +2,19 @@
 @model List<Departman>
 
 @{
-    /**/
 
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<link rel="stylesheet" href="~/Web/Csslerim/tablo.css" />
+
+<link rel="stylesheet" href="~/Web/Css/style.css" />
+
 <br />
 
 <table class="table table-bordered">
 
-    <tr>
+    <tr class="headerTable">
         <th>İD</th>
         <th>Departman Adı</th>
         <th>Sil</th>
@@ -23,7 +24,8 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="alterTable">
+
             <td>@item.Departmanİd</td>
             <td>@item.DepartmanAd</td>
             <td><a href="/Departman/DepartmanSil/@item.Departmanİd" class="btn btn-danger">Sil</a></td>
@@ -34,4 +36,4 @@
 
 </table>
 
-<a href="/Departman/DepartmanEkle/" class="btn btn-primary">Yeni Departman Ekle</a> 
+<a href="/Departman/DepartmanEkle/" class="btn btn-primary">Yeni Departman Ekle</a>

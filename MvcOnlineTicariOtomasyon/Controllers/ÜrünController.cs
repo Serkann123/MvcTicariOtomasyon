@@ -65,7 +65,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.Uruns.Find(id);
             return View(degerler);
         }
-
+    
         [HttpPost]
         public ActionResult ÜrünGüncelle(Urun p)
         {

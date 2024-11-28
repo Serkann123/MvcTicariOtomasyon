@@ -1,0 +1,9 @@
+﻿.headerTable th {
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: 400;
+}
+
+.alterTable {
+    background-color: whitesmoke;
+}

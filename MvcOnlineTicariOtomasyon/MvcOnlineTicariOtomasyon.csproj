@@ -141,6 +141,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FaturalarController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
+    <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
@@ -160,6 +161,10 @@
     <Compile Include="Migrations\202410271907412_removeTable.designer.cs">
       <DependentUpon>202410271907412_removeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411262126423_KargoTakip_Migrations.cs" />
+    <Compile Include="Migrations\202411262126423_KargoTakip_Migrations.designer.cs">
+      <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cariler.cs" />
@@ -170,6 +175,8 @@
     <Compile Include="Models\Sınıflar\FaturaKalem.cs" />
     <Compile Include="Models\Sınıflar\Faturalar.cs" />
     <Compile Include="Models\Sınıflar\Gider.cs" />
+    <Compile Include="Models\Sınıflar\KargoDetay.cs" />
+    <Compile Include="Models\Sınıflar\KargoTakip.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
     <Compile Include="Models\Sınıflar\SatisHareket.cs" />
@@ -2387,7 +2394,7 @@
     <Content Include="webpanel\vendor\jquery\jquery.slim.js" />
     <Content Include="webpanel\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Web\.gitignore" />
-    <Content Include="Web\Csslerim\tablo.css" />
+    <Content Include="Web\Css\style.css" />
     <Content Include="Web\dist\401.html" />
     <Content Include="Web\dist\404.html" />
     <Content Include="Web\dist\500.html" />
@@ -2923,6 +2930,8 @@
     <Content Include="Views\CariPanel\Index.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Ürün\SatisYap.cshtml" />
+    <Content Include="Views\Kargo\Index.cshtml" />
+    <Content Include="Views\Kargo\YeniKargo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2957,6 +2966,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410271907412_removeTable.resx">
       <DependentUpon>202410271907412_removeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411262126423_KargoTakip_Migrations.resx">
+      <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

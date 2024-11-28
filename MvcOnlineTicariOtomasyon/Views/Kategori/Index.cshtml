@@ -11,19 +11,14 @@
 <html>
 <head>
 
-    <style>
-        .table-container {
-            margin-top: 0px;
-        }
-    </style>
+    <link rel="stylesheet" href="~/Web/Css/style.css" />
 
-    <link rel="stylesheet" href="~/Web/Csslerim/tablo.css" />
 </head>
 <body>
     <br />
     <div class="table-container">
         <table class="table table-bordered">
-            <tr>
+            <tr class="headerTable">
                 <th>Kategori Adı</th>
                 <th>Sil</th>
                 <th>Güncelle</th>
@@ -31,7 +26,7 @@
 
             @foreach (var item in Model)
             {
-                <tr>
+                <tr class="alterTable">
                     <td>@item.KategoriAd</td>
                     <td><a href="/Kategori/KategoriDelete/@item.İD/" class="btn btn-secondary">Sil</a></td>
                     <td><a href="/Kategori/kategoriGetir/@item.İD/" class="btn btn-success">Güncelle</a></td>

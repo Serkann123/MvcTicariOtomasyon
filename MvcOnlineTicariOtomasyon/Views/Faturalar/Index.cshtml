@@ -5,10 +5,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<link rel="stylesheet" href="~/Web/Css/style.css" />
+
 <br />
 <table class="table table-bordered">
 
-    <tr>
+    <tr class="headerTable">
         <th>ID</th>
         <th>Seri Sıra No</th>
         <th>Tarih</th>
@@ -21,23 +24,27 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <th>@item.Faturaİd</th>
-        <td>@item.FaturaSeriNo @item.FaturaSıraNo</td>
-        <td>@item.FaturaTarih</td>
-        <td>@item.Saat</td>
-        <td>@item.Toplam ₺</td>
-        <td><a href="/Faturalar/FaturaGetir/@item.Faturaİd" class="btn btn-warning">Güncelle</a></td>
-        <td><a href="/Faturalar/FaturaDetay/@item.Faturaİd" class="btn btn-default" style="background-color:lightcoral">Detaylar</a></td>
-        <td><a href="/Faturalar/FaturaDetay/@item.Faturaİd" class="btn btn-default" style="background-color:thistle">Kalem</a></td>
-    </tr>
+
+        <tr class="alterTable">
+
+            <th>@item.Faturaİd</th>
+            <td>@item.FaturaSeriNo @item.FaturaSıraNo</td>
+            <td>@item.FaturaTarih</td>
+            <td>@item.Saat</td>
+            <td>@item.Toplam ₺</td>
+            <td><a href="/Faturalar/FaturaGetir/@item.Faturaİd" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Faturalar/FaturaDetay/@item.Faturaİd" class="btn btn-default" style="background-color:lightcoral">Detaylar</a></td>
+            <td><a href="/Faturalar/FaturaDetay/@item.Faturaİd" class="btn btn-default" style="background-color:thistle">Kalem</a></td>
+        </tr>
     }
 
 </table>
 
 <a href="/Faturalar/FaturaEkle/" class="btn btn-primary">Yeni Fatura Girişi</a>
+
 <br />
 <br />
+
 <button class="btn btn-default" style="background-color:cornflowerblue; color:white" data-toggle="modal" data-target="#modal1">Popup Penceresi</button>
 
 <div class="modal" id="modal1">
@@ -53,7 +60,7 @@
                         <td>Sıra No</td>
                         <td>Tutar</td>
                     </tr>
-                    @foreach(var item in Model)
+                    @foreach (var item in Model)
                     {
                         <tr>
                             <td>@item.FaturaSeriNo</td>
