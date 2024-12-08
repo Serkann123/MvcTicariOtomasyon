@@ -1,0 +1,29 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model  List<KargoTakip>
+
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Web/Css/style.css" />
+
+<br />
+<table class="table table-striped">
+
+    <tr class="headerTable">
+        <th>Açıklama</th>
+        <th>Tarih</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="alterTable">
+            <td>@item.Aciklama</td>
+            <td>@item.TarihZaman.ToShortDateString()</td>
+        </tr>
+    }
+
+</table>
+

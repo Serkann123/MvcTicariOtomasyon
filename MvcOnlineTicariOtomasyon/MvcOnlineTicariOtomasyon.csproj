@@ -61,6 +61,10 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -165,6 +169,10 @@
     <Compile Include="Migrations\202411262126423_KargoTakip_Migrations.designer.cs">
       <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412042120372_add_table_mesaj.cs" />
+    <Compile Include="Migrations\202412042120372_add_table_mesaj.designer.cs">
+      <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cariler.cs" />
@@ -178,6 +186,7 @@
     <Compile Include="Models\Sınıflar\KargoDetay.cs" />
     <Compile Include="Models\Sınıflar\KargoTakip.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
+    <Compile Include="Models\Sınıflar\Mesajlar.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
     <Compile Include="Models\Sınıflar\SatisHareket.cs" />
     <Compile Include="Models\Sınıflar\SınıfGrup.cs" />
@@ -2932,6 +2941,8 @@
     <Content Include="Views\Ürün\SatisYap.cshtml" />
     <Content Include="Views\Kargo\Index.cshtml" />
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
+    <Content Include="Views\Kargo\KargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2969,6 +2980,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411262126423_KargoTakip_Migrations.resx">
       <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412042120372_add_table_mesaj.resx">
+      <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

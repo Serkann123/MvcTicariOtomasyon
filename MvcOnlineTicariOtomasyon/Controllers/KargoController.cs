@@ -52,5 +52,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult KargoTakip(string id)
+        {
+            var values = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(values);
+        }
+
     }
 }

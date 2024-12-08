@@ -44,6 +44,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             if (bilgiler != null)
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
+                Session["CariMail"] = bilgiler.CariMail.ToString();
                 return RedirectToAction("Index","CariPanel");
             }
             else
