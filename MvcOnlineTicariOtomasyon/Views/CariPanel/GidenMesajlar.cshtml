@@ -2,7 +2,7 @@
 @model List<Mesajlar>
 
 @{
-    ViewBag.Title = "GelenMesajlar";
+    ViewBag.Title = "GidenMesajlar";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
 
@@ -309,11 +309,11 @@
 
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
 
-                                            <td class="mailbox-name"><a href="/CariPanel/MesajDetay/@item.MesajId">@item.Gönderici</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@item.Alici</a></td>
 
                                             <td class="mailbox-subject">
 
-                                                <b>@item.Konu</b> - @item.İçerik.Substring(0,20)...
+                                                <b>@item.Konu</b> - @item.İçerik.Substring(0, 20)...
 
                                             </td>
 
@@ -388,59 +388,59 @@
 
     <script>
 
-$(function () {
+        $(function () {
 
-    $('.checkbox-toggle').click(function () {
+            $('.checkbox-toggle').click(function () {
 
-      var clicks = $(this).data('clicks')
+                var clicks = $(this).data('clicks')
 
-      if (clicks) {
+                if (clicks) {
 
-        $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
 
-        $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
 
-      } else {
+                } else {
 
-        $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
 
-        $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
 
-      }
+                }
 
-      $(this).data('clicks', !clicks)
+                $(this).data('clicks', !clicks)
 
-    })
+            })
 
-    $('.mailbox-star').click(function (e) {
+            $('.mailbox-star').click(function (e) {
 
-      e.preventDefault()
+                e.preventDefault()
 
-      var $this = $(this).find('a > i')
+                var $this = $(this).find('a > i')
 
-      var glyph = $this.hasClass('glyphicon')
+                var glyph = $this.hasClass('glyphicon')
 
-      var fa    = $this.hasClass('fa')
+                var fa = $this.hasClass('fa')
 
-      if (glyph) {
+                if (glyph) {
 
-        $this.toggleClass('glyphicon-star')
+                    $this.toggleClass('glyphicon-star')
 
-        $this.toggleClass('glyphicon-star-empty')
+                    $this.toggleClass('glyphicon-star-empty')
 
-      }
+                }
 
-        if (fa) {
+                if (fa) {
 
-        $this.toggleClass('fa-star')
+                    $this.toggleClass('fa-star')
 
-        $this.toggleClass('fa-star-o')
+                    $this.toggleClass('fa-star-o')
 
-      }
+                }
 
-    })
+            })
 
-  })</script>
+        })</script>
 
     <script src="../../dist/js/demo.js"></script>
 

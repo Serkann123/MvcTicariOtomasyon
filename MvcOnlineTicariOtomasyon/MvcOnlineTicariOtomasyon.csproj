@@ -173,6 +173,10 @@
     <Compile Include="Migrations\202412042120372_add_table_mesaj.designer.cs">
       <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412152108181_updateMessage.cs" />
+    <Compile Include="Migrations\202412152108181_updateMessage.designer.cs">
+      <DependentUpon>202412152108181_updateMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cariler.cs" />
@@ -2943,6 +2947,9 @@
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
     <Content Include="Views\Kargo\KargoTakip.cshtml" />
     <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\GidenMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\MesajDetay.cshtml" />
+    <Content Include="Views\CariPanel\YeniMesaj.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2983,6 +2990,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412042120372_add_table_mesaj.resx">
       <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412152108181_updateMessage.resx">
+      <DependentUpon>202412152108181_updateMessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

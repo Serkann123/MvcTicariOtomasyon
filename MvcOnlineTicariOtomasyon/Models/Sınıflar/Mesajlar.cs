@@ -24,8 +24,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(30)]
         public string Konu { get; set; }
 
-        [Column(TypeName = "Varchar")]
-        [StringLength(200)]
         public string İçerik { get; set; }
 
         [Column(TypeName = "Date")]
