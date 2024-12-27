@@ -16,15 +16,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degerler = c.Carilers.FirstOrDefault(x=>x.CariMail==mail);
+            var degerler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
             ViewBag.ma = mail;
+            var mailId = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariİd).FirstOrDefault();
+            ViewBag.mailİd = mailId;
+            var toplamSatis = c.SatisHarekets.Where(x => x.Cariİd == mailId).Count();
+            ViewBag.ToplamSatis = toplamSatis;
+            var toplamTutar = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x => x.ToplamTutar);
+            ViewBag.ToplamTutar = toplamTutar;
+
+            var toplamÜrünSayisi = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x => x.Adet);
+            ViewBag.ToplamÜrünSayisi = toplamÜrünSayisi;
+
+            var adSoyad = c.Carilers.Where(x => x.Cariİd == mailId).Select(y => y.CariAdı + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adSoyad = adSoyad;
+
             return View(degerler);
         }
         [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
-            var values = c.Mesajlars.Where(x=>x.Alici==mail).OrderByDescending(x=>x.MesajId).ToList();
+            var values = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x => x.MesajId).ToList();
             var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelenSayisi;
 
@@ -36,7 +49,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"];
-            var values = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x=>x.MesajId).ToList();
+            var values = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x => x.MesajId).ToList();
             var gidenSayisi = c.Mesajlars.Count(x => x.Gönderici == mail).ToString();
             ViewBag.d2 = gidenSayisi;
 
@@ -99,7 +112,32 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index","Login");
+            return RedirectToAction("Index", "Login");
         }
+
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["CariMail"];
+            var id = c.Carilers.Where(x => x.CariMail == mail).Select(x => x.Cariİd).FirstOrDefault();
+            var cariBul = c.Carilers.Find(id);
+            return PartialView("Partial1", cariBul);
+        }
+
+        public PartialViewResult Partial2()
+        {
+            var values = c.Mesajlars.Where(x => x.Gönderici == "Admin").ToList();
+            return PartialView(values);
+        }
+
+        public ActionResult CariBilgiGüncelle(Cariler cariler)
+        {
+            var cari = c.Carilers.Find(cariler.Cariİd);
+            cari.CariAdı = cariler.CariAdı;
+            cari.CariSoyad = cariler.CariSoyad;
+            cari.CariSifre = cariler.CariSifre;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
