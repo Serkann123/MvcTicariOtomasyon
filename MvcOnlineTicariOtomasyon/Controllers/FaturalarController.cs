@@ -74,5 +74,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Dinamik()
+        {
+            Class4 cs = new Class4();
+            cs.Deger1 = c.Faturalars.ToList();
+            cs.Deger2 = c.FaturaKalems.ToList();
+            return View(cs);
+        }
+
     }
 }

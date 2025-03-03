@@ -57,5 +57,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Deneme()
+        {
+            Class3 cs = new Class3();
+            cs.Kategoriler = new SelectList(c.Kategoris, "İD", "KategoriAd");
+            cs.Urunler = new SelectList(c.Uruns, "Urunİd", "UrunAd");
+            return View(cs);
+        }
+
+        public JsonResult UrunGetir(int p)
+        {
+            var urunListesi = (from x in c.Uruns
+                               join y in c.Kategoris
+                               on x.Kategori.İD equals
+                               y.İD
+                               where x.Kategori.İD == p
+                               select new
+                               {
+                                   Text = x.UrunAd,
+                                   value = x.Urunİd.ToString()
+                               }).ToList();
+            return Json(urunListesi,JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
