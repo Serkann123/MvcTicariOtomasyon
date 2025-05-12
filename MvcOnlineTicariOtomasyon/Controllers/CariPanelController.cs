@@ -12,6 +12,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     public class CariPanelController : Controller
     {
         Context c = new Context();
+
         [Authorize]
         public ActionResult Index()
         {
@@ -22,10 +23,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.mailİd = mailId;
             var toplamSatis = c.SatisHarekets.Where(x => x.Cariİd == mailId).Count();
             ViewBag.ToplamSatis = toplamSatis;
-            var toplamTutar = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x => x.ToplamTutar);
+            var toplamTutar = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x =>(decimal?) x.ToplamTutar) ?? 0;
             ViewBag.ToplamTutar = toplamTutar;
 
-            var toplamÜrünSayisi = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x => x.Adet);
+            var toplamÜrünSayisi = c.SatisHarekets.Where(x => x.Cariİd == mailId).Sum(x=>(decimal?) x.Adet) ?? 0;
             ViewBag.ToplamÜrünSayisi = toplamÜrünSayisi;
 
             var adSoyad = c.Carilers.Where(x => x.Cariİd == mailId).Select(y => y.CariAdı + " " + y.CariSoyad).FirstOrDefault();
@@ -97,9 +98,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult KargoTakip(string p)
         {
-            var k = from x in c.KargoDetays select x;
-            k = k.Where(x => x.TakipKodu.Contains(p));
-            return View(k.ToList());
+            var k = c.KargoDetays.Where(x => x.TakipKodu.Contains(p)).ToList();
+            return View(k);
         }
 
         public ActionResult CariKargoTakip(string id)
@@ -138,6 +138,5 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }

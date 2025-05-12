@@ -7,13 +7,10 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
 <link rel="stylesheet" href="~/Web/Css/style.css" />
-
 <br />
 
 <table class="table table-bordered">
-
     <tr class="headerTable">
         <th>İD</th>
         <th>Departman Adı</th>
@@ -25,7 +22,6 @@
     @foreach (var item in Model)
     {
         <tr class="alterTable">
-
             <td>@item.Departmanİd</td>
             <td>@item.DepartmanAd</td>
             <td><a href="/Departman/DepartmanSil/@item.Departmanİd" class="btn btn-danger">Sil</a></td>
@@ -33,7 +29,5 @@
             <td><a href="/Departman/DepartmanDetay/@item.Departmanİd" class="btn btn-secondary">Detaylar</a></td>
         </tr>
     }
-
 </table>
-
 <a href="/Departman/DepartmanEkle/" class="btn btn-primary">Yeni Departman Ekle</a>

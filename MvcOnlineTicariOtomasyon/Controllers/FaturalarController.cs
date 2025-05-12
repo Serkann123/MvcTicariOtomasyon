@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -74,13 +75,44 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Dinamik()
         {
             Class4 cs = new Class4();
-            cs.Deger1 = c.Faturalars.ToList();
-            cs.Deger2 = c.FaturaKalems.ToList();
+            cs.deger1 = c.Faturalars.ToList();
+            cs.deger2 = c.FaturaKalems.ToList();
             return View(cs);
         }
 
+        [HttpPost]
+        public ActionResult Dinamik(FaturaViewModel model)
+        {
+            Faturalar f = new Faturalar();
+
+            f.FaturaSeriNo = model.FaturaSeriNo;
+            f.FaturaSıraNo = model.FaturaSıraNo;
+            f.FaturaTarih = model.FaturaTarih;
+            f.Saat = model.Saat;
+            f.VergiDairesi = model.VergiDairesi;
+            f.TeslimEden = model.TeslimEden;
+            f.TeslimAlan = model.TeslimAlan;
+            f.Toplam = model.Toplam;
+
+            c.Faturalars.Add(f);
+            foreach (var x in model.Kalemler)
+            {
+                FaturaKalem fk = new FaturaKalem
+                {
+                    Acıklama = x.Acıklama,
+                    BirimFiyat = x.BirimFiyat,
+                    Miktar = x.Miktar,
+                    Tutar = x.Tutar,
+                    Faturaİd = f.Faturaİd
+                };
+                c.FaturaKalems.Add(fk);
+            }
+            c.SaveChanges();
+            return Json("İşlem Gerçekleşti: " + JsonRequestBehavior.AllowGet);
+        }
     }
 }

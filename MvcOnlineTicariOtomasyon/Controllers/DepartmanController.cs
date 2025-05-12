@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
-
         Context c = new Context();
 
         public ActionResult Index()
@@ -17,7 +17,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.Departmen.Where(x=>x.DepartmanStatus==true).ToList();
             return View(degerler);
         }
-
+        [Authorize(Roles ="A")]
         [HttpGet]
         public ActionResult DepartmanEkle()
         {

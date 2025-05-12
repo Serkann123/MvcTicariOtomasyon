@@ -11,24 +11,22 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
     {
         [Key]
         public int Urunİd { get; set; }
-        [Column(TypeName ="Varchar")]
+        [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string UrunAd { get; set; }
 
-        [Column(TypeName ="Varchar")]
+        [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Marka { get; set; }
-        public short  Stok { get; set; }
+        public short Stok { get; set; }
         public decimal AlisFiyat { get; set; }
         public decimal SatisFiyat { get; set; }
         public bool Durum { get; set; }
-
         public string UrunGorsel { get; set; }
 
         public int kategoriİd { get; set; }
-        public virtual  Kategori Kategori { get; set; }
+        public virtual Kategori Kategori { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
-
     }
 }
