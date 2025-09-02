@@ -1,9 +1,7 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
-@model List<Urun>
+﻿@model List<Urun>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <link rel="stylesheet" href="~/Web/Css/style.css" />
@@ -29,23 +27,25 @@
         <th>Kategori</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Ürün Detay</th>
         <th>Satış Yap</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr class="alterTable">
-            <td>@item.UrunAd</td>
-            <td>@item.Marka</td>
-            <td>@item.Stok</td>
-            <td>@item.AlisFiyat ₺</td>
-            <td>@item.SatisFiyat ₺</td>
-            <td>@item.Durum</td>
-            <td>@item.Kategori.KategoriAd</td>
-            <td><a href="/Ürün/ÜrünSil/@item.Urunİd" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Ürün/ÜrünGüncelle/@item.Urunİd" class="btn btn-success">Güncelle</a></td>
-            <td><a href="/Ürün/SatisYap/@item.Urunİd" class="btn btn-primary">Satış Yap</a></td>
-        </tr>
+    <tr class="alterTable">
+        <td>@item.UrunAd</td>
+        <td>@item.Marka</td>
+        <td>@item.Stok</td>
+        <td>@item.AlisFiyat ₺</td>
+        <td>@item.SatisFiyat ₺</td>
+        <td>@item.Durum</td>
+        <td>@item.Kategori.KategoriAd</td>
+        <td><a href="/Ürün/ÜrünSil/@item.Urunİd" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Ürün/ÜrünGüncelle/@item.Urunİd" class="btn btn-success">Güncelle</a></td>
+        <td><a href="/ÜrünDetay/Index/@item.Urunİd" class="btn btn-secondary">Detay</a></td>
+        <td><a href="/Ürün/SatisYap/@item.Urunİd" class="btn btn-primary">Satış Yap</a></td>
+    </tr>
     }
 
 </table>

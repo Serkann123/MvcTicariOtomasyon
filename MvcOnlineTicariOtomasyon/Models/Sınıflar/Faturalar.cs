@@ -30,13 +30,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string Saat { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(10)]
         public string TeslimEden { get; set; }
 
         public decimal Toplam { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(10)]
         public string TeslimAlan { get; set; }
 
         public virtual ICollection<FaturaKalem> FaturaKalems { get; set; }

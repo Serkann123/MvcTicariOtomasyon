@@ -1,8 +1,7 @@
-﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Class1
+﻿@model Class1
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@
                         <div class="col-12 col-sm-6">
                             <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
                             <div class="col-12">
-                                <img src="@item.UrunGorsel" class="product-image" style="width: 575px; height: 521px;" alt="Product Image">
+                                <img src="@item.UrunGorsel" class="product-image" style="width: 575px; height: 521px; object-fit:cover;" alt="Product Image">
                             </div>
                             <div class="col-12 product-image-thumbs">
                                 <div class="product-image-thumb active"><img src="~/AdminLTE-3.0.4/dist/img/prod-1.jpg" alt="Product Image"></div>

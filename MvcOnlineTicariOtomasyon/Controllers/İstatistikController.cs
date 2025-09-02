@@ -1,4 +1,5 @@
 ﻿using MvcOnlineTicariOtomasyon.Models.Sınıflar;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,12 +41,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var tarih = DateTime.Today;
             ViewBag.v15 = c.SatisHarekets.Count(x => x.Tarih == tarih);
 
-            ViewBag.v16 = c.SatisHarekets.Where(x => x.Tarih == tarih).Sum(x=> (decimal?)x.ToplamTutar);
+            ViewBag.v16 = c.SatisHarekets.Where(x => x.Tarih == tarih).Sum(x=> (decimal?)x.ToplamTutar) ?? 0;
 
             return View();
         }
 
-        public ActionResult KolayTablolar()
+        public ActionResult KolayTablolar(int sayfa = 1)
         {
             var sorgu = from x in c.Carilers
                         group x by x.CariSehir into g
@@ -55,8 +56,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                             Sayi = g.Count()
                         };
 
-            return View(sorgu.ToList());
-
+            return View(sorgu.ToList().ToPagedList(sayfa, 10));
         }
 
         public PartialViewResult partial1()
@@ -73,31 +73,29 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return PartialView(values.ToList());
         }
 
-        public PartialViewResult partial2()
+        public PartialViewResult partial2(int sayfa = 1)
         {
             var values = c.Carilers.ToList();
-            return PartialView(values);
+            return PartialView(values.ToList().ToPagedList(sayfa, 10));
         }
 
-        public PartialViewResult partial3()
+        public PartialViewResult partial3(int sayfa = 1)
         {
             var values = c.Uruns.ToList();
-            return PartialView(values);
+            return PartialView(values.ToList().ToPagedList(sayfa, 10));
         }
 
-        public PartialViewResult partial4()
+        public PartialViewResult partial4(int sayfa = 1)
         {
             var values = from x in c.Uruns
-                         group x by x.Marka
-                          into g
+                         group x by x.Marka into g
                          select new SınıfGrup3
                          {
                              Marka = g.Key,
                              Sayi = g.Count()
                          };
 
-            return PartialView(values.ToList());
+            return PartialView(values.ToList().ToPagedList(sayfa, 10));
         }
-
     }
 }

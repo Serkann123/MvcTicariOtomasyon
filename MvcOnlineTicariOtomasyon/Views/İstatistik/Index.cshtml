@@ -1,39 +1,45 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Metro Panel Flat Bootstarp Resposive Website Template| Home :: w3layouts</title>
-   
     <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <script src="~/web2/js/jquery.min.js"></script>
-    <link rel=~/web2/"stylesheet" href="css/font-awesome.css">
-
+    <link rel="stylesheet" href="css/font-awesome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Metro Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--webfont-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-text p {
+            width:100%;
+            text-align:center;
+        }
+    </style>
 </head>
 
 <body>
     <div class="total-content">
         <div class="list_of_members">
-            <div class="sales">
-
+            <div class="sales flex">
                 <div class="icon-text">
                     <h3>@ViewBag.v1</h3>
                     <p>Toplam Cari</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="new-users">
+            <div class="new-users flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v2</h3>
@@ -41,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="orders">
+            <div class="orders flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v3</h3>
@@ -49,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="visitors">
+            <div class="visitors flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v4</h3>
@@ -62,9 +68,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </div>
 
-    <div class="total-content">
-        <div class="list_of_members">
-            <div class="sales">
+    <div class="total-content ">
+        <div class="list_of_members ">
+            <div class="sales flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v5</h3>
@@ -72,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="new-users">
+            <div class="new-users flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v6</h3>
@@ -80,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="orders">
+            <div class="orders flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v7</h3>
@@ -88,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="visitors">
+            <div class="visitors flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v8</h3>
@@ -103,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="total-content">
         <div class="list_of_members">
-            <div class="sales">
+            <div class="sales flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v9</h3>
@@ -111,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="new-users">
+            <div class="new-users flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v10</h3>
@@ -119,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="orders">
+            <div class="orders flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v11</h3>
@@ -127,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="visitors">
+            <div class="visitors flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v12</h3>
@@ -142,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="total-content">
         <div class="list_of_members">
-            <div class="sales">
+            <div class="sales flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v13</h3>
@@ -150,15 +156,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="new-users">
+            <div class="new-users flex">
 
-                <div class="icon-text">
+                <div class="icon-text ">
                     <h3>@ViewBag.v14</h3>
                     <p>Kasadaki Tutar</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="orders">
+            <div class="orders flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v15</h3>
@@ -166,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="visitors">
+            <div class="visitors flex">
 
                 <div class="icon-text">
                     <h3>@ViewBag.v16</h3>
@@ -176,9 +182,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"></div>
         </div>
-
     </div>
 
+    <script>
 
+        document.addEventListener("DOMContentLoaded", () => {
+            const h3Elements  = document.querySelectorAll(".icon-text h3");
+
+            h3Elements.forEach((h3) => {
+                const kelimeSayısı = h3.textContent.trim().split(/\s+/).length;
+                if (kelimeSayısı > 1) {
+                    h3.style.fontSize = "20px";
+                    h3.parentElement.parentElement.style.height = "133px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

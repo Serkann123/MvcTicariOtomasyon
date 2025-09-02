@@ -155,32 +155,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410182246063_migler.cs" />
-    <Compile Include="Migrations\202410182246063_migler.designer.cs">
-      <DependentUpon>202410182246063_migler.cs</DependentUpon>
+    <Compile Include="Migrations\202507262217540_mig1.cs" />
+    <Compile Include="Migrations\202507262217540_mig1.designer.cs">
+      <DependentUpon>202507262217540_mig1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410271907412_removeTable.cs" />
-    <Compile Include="Migrations\202410271907412_removeTable.designer.cs">
-      <DependentUpon>202410271907412_removeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202411262126423_KargoTakip_Migrations.cs" />
-    <Compile Include="Migrations\202411262126423_KargoTakip_Migrations.designer.cs">
-      <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202412042120372_add_table_mesaj.cs" />
-    <Compile Include="Migrations\202412042120372_add_table_mesaj.designer.cs">
-      <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202412152108181_updateMessage.cs" />
-    <Compile Include="Migrations\202412152108181_updateMessage.designer.cs">
-      <DependentUpon>202412152108181_updateMessage.cs</DependentUpon>
+    <Compile Include="Migrations\202507262229048_updateColums.cs" />
+    <Compile Include="Migrations\202507262229048_updateColums.designer.cs">
+      <DependentUpon>202507262229048_updateColums.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cariler.cs" />
     <Compile Include="Models\Sınıflar\Class1.cs" />
     <Compile Include="Models\Sınıflar\Class3.cs" />
-    <Compile Include="Models\Sınıflar\Class4.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
     <Compile Include="Models\Sınıflar\Departman.cs" />
     <Compile Include="Models\Sınıflar\Detay.cs" />
@@ -2197,6 +2184,20 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\images\Avatar\avatar1.jpeg" />
+    <Content Include="Content\images\Avatar\avatar10.jpeg" />
+    <Content Include="Content\images\Avatar\avatar11.jpeg" />
+    <Content Include="Content\images\Avatar\avatar12.jpeg" />
+    <Content Include="Content\images\Avatar\avatar13.jpeg" />
+    <Content Include="Content\images\Avatar\avatar14.jpeg" />
+    <Content Include="Content\images\Avatar\avatar2.jpeg" />
+    <Content Include="Content\images\Avatar\avatar3.jpeg" />
+    <Content Include="Content\images\Avatar\avatar4.jpeg" />
+    <Content Include="Content\images\Avatar\avatar5.jpeg" />
+    <Content Include="Content\images\Avatar\avatar6.jpeg" />
+    <Content Include="Content\images\Avatar\avatar7.jpeg" />
+    <Content Include="Content\images\Avatar\avatar8.jpeg" />
+    <Content Include="Content\images\Avatar\avatar9.jpeg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2988,20 +2989,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202410182246063_migler.resx">
-      <DependentUpon>202410182246063_migler.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202507262217540_mig1.resx">
+      <DependentUpon>202507262217540_mig1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410271907412_removeTable.resx">
-      <DependentUpon>202410271907412_removeTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202411262126423_KargoTakip_Migrations.resx">
-      <DependentUpon>202411262126423_KargoTakip_Migrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202412042120372_add_table_mesaj.resx">
-      <DependentUpon>202412042120372_add_table_mesaj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202412152108181_updateMessage.resx">
-      <DependentUpon>202412152108181_updateMessage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202507262229048_updateColums.resx">
+      <DependentUpon>202507262229048_updateColums.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

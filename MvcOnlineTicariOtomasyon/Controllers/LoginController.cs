@@ -66,7 +66,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var bilgiler = c.Admins.FirstOrDefault(x => x.KullanıcıAd == p.KullanıcıAd && x.Sifre == p.Sifre);
             if (bilgiler != null)
             {
-                FormsAuthentication.SetAuthCookie(bilgiler.KullanıcıAd, false);
+                FormsAuthentication.SetAuthCookie(bilgiler.KullanıcıAd, true);
                 return RedirectToAction("Index","Kategori");
             }
             else

@@ -1,5 +1,4 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
-@model List<Urun>
+﻿@model IPagedList<Urun>
 
 <div class="row">
     <div class="col-12">
@@ -40,7 +39,31 @@
 
                     </tbody>
                 </table>
+                @Html.PagedListPager(Model, sayfa => Url.Action("partial3", "İstatistik", new { sayfa }), new PagedListRenderOptions
+                       {
+                             LiElementClasses = new List<string>
+                             { "page-link"}
+                        })
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $(function () {
+        $(document).on("click", "#partial3Container .pagination a", function (e) {
+            e.preventDefault();
+            var url = $(this).attr("href");
+            $.ajax({
+                url: url,
+                type: "GET",
+                success: function (data) {
+                    $("#partial3Container").html(data);
+                },
+                error: function () {
+                    alert("Hata oluştu.");
+                }
+            });
+        });
+    });
+</script>

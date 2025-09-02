@@ -1,9 +1,7 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
-@model List<SatisHareket>
+﻿@model List<SatisHareket>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 
@@ -39,8 +37,8 @@
             <td>@item.Personel.PersonelAd @item.Personel.personelSoyad</td>
             <td>@item.Adet</td>
             <td>@item.Fiyat</td>
-            <td>@item.ToplamTutar</td>
-            <td>@item.Tarih</td>
+            <td>@item.ToplamTutar</td><h1>
+            <td>@item.Tarih.ToString("dd.MM.yyyy")</td>
             <td><a href="/Satis/SatisGetir/@item.Satısİd" class="btn btn-outline-warning">Güncelle</a></td>
             <td><a href="/Satis/SatisDetay/@item.Satısİd" class="btn btn-default" style="background-color:lightcoral">Detaylar</a></td>
         </tr>

@@ -7,18 +7,18 @@ namespace MvcOnlineTicariOtomasyon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class add_table_mesaj : IMigrationMetadata
+    public sealed partial class updateColums : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_table_mesaj));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateColums));
         
         string IMigrationMetadata.Id
         {
-            get { return "202412042120372_add_table_mesaj"; }
+            get { return "202507262229048_updateColums"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
